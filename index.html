@@ -1,32 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Amplop Love</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Kamu Pendek</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- 🎵 AUDIO AUTOPLAY & LOOP -->
-  <audio autoplay loop>
-    <source src="Akatsuki.mp3" type="audio/mpeg" />
-    Browser kamu tidak mendukung audio.
-  </audio>
-
-  <div class="container">
-    <div class="envelope" onclick="openLetter()">
-      <img src="gambar.png" alt="Amplop Pink" class="envelope-img" />
-      <div class="love">❤</div>
-      <div class="letter" id="letter">
-        <p>aku minta maaf ya bos, aku nggak tau kalo itu privasi kamu, tapi tenang angga udah aku suruh buat tutup mulut, jadi nggak mungkin kesebar. jujur aku ga tau sumpah, dan aku nggak kesampean walaupun kamu nggak bilang🙏😢</p>
+  <div class="container" onclick="bukaSurat()">
+    <div class="amplop">
+      <img src="gambar.png" alt="Amplop" class="gambar-amplop">
+      <div class="kertas" id="kertas">
+        <p>Hai kamu!🤏 <br>Ini surat kecil buatmu... <br> aku minta maaf ya buat yang tadi, aku jujur nggak tau kalo itu privasi kamu, dan aku udah bilang sama angga buat tutup mulut jadi tenang ya bos, sekali lagi aku minta maaf banget🙏😢
+        </p>
       </div>
     </div>
   </div>
 
-  <script>
-    function openLetter() {
-      document.getElementById("letter").classList.add("show");
-    }
-  </script>
+  <audio id="musik" loop>
+    <source src="musik.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung audio.
+  </audio>
+   <div id="partikel-container"></div>
+ <script>
+   let sudahDiklik = false;
+   
+   function bukaSurat() {
+     if (!sudahDiklik) {
+       document.getElementById("kertas").classList.add("muncul");
+       document.getElementById("musik").play();
+       mulaiPartikelLove();
+       sudahDiklik = true;
+     }
+   }
+   
+   function mulaiPartikelLove() {
+     setInterval(() => {
+       const partikel = document.createElement('div');
+       partikel.classList.add('partikel-love');
+       partikel.innerHTML = '💖';
+       partikel.style.left = Math.random() * 100 + 'vw';
+       partikel.style.animationDuration = (2 + Math.random() * 3) + 's';
+       document.getElementById('partikel-container').appendChild(partikel);
+       
+       setTimeout(() => {
+         partikel.remove();
+       }, 5000);
+     }, 300);
+   }
+ </script>
 </body>
 </html>
