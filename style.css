@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to top right, #ffdde1, #ee9ca7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  position: relative;
+}
+
+.envelope {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  cursor: pointer;
+  transform: translateX(15px);
+}
+
+.envelope-img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.love {
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  pointer-events: none;
+}
+
+.letter {
+  position: absolute;
+  top: 230%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 180px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: all 0.6s ease;
+  z-index: -1;
+}
+
+.letter.show {
+  transform: translate(-50%, -150%);
+  opacity: 1;
+  z-index: 2;
+}
+
+.letter p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.4;
+}
+

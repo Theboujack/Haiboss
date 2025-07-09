@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amplop Love</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap');
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Tekan love nya ya bos</h2>
+    <div class="envelope" onclick="openLetter()">
+      <img src="gambar.png" alt="Envelope" class="envelope-img" />
+      <div class="love">❤</div>
+      <div class="letter" id="letter">
+        <p>aku minta maaf ya bos, aku nggak tau kalo itu privasi kamu, tapi tenang angga udah aku suruh buat tutup mulut, jadi nggak mungkin kesebar. jujur aku ga tau sumpah, dan aku nggak kesampean walaupun kamu nggak bilang🙏😢</p>
+      </div>
+    </div>
+  </div>
+      <audio autoplay loop>
+        <source src="musik.mp3" type="audio/mpeg">
+      </audio>
+  <script>
+    function openLetter() {
+      document.getElementById("letter").classList.add("show");
+    }
+  </script>
+</body>
+</html>
